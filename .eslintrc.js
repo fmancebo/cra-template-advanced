@@ -24,31 +24,9 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "react-hooks", "testing-library", "prettier", "import"],
+  plugins: ["react", "react-hooks", "testing-library", "prettier"],
   rules: {
     "react/react-in-jsx-scope": "off",
-    "import/order": [
-      "error",
-      {
-        groups: [
-          ["builtin", "external"],
-          ["parent", "sibling", "index"],
-        ],
-        pathGroups: [
-          {
-            pattern: "react",
-            group: "external",
-            position: "before",
-          },
-        ],
-        pathGroupsExcludedImportTypes: ["react"],
-        "newlines-between": "always",
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
-      },
-    ],
     "prettier/prettier": "warn",
     "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".js"] }],
     "import/prefer-default-export": "off",
