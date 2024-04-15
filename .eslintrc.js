@@ -7,7 +7,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["airbnb", "plugin:react/recommended", "prettier"],
+  extends: ["airbnb", "plugin:react/recommended", "plugin:jsx-a11y/recommended", "prettier"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -24,12 +24,26 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "react-hooks", "testing-library", "prettier"],
+  plugins: ["react", "react-hooks", "testing-library", "prettier", "jsx-a11y"],
   rules: {
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        semi: true,
+        tabWidth: 2,
+        printWidth: 100,
+        singleQuote: false,
+        trailingComma: "all",
+        jsxSingleQuote: true,
+        bracketSpacing: true,
+      },
+    ],
     "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".js"] }],
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    quotes: "off",
   },
 };
