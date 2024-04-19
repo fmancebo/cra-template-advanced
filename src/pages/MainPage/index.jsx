@@ -6,7 +6,7 @@ export default function MainPage() {
   return (
     <Container>
       <h1>Meu aplicativo React</h1>
-      <p>Esse é o template typescript para React e APIs.</p>
+      <p>Esse React para APIs.</p>
     </Container>
   );
 }
