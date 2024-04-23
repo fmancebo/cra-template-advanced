@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-* {
+*,
+*::before,
+*::after  {
     margin: 0;
     padding: 0;
     outline: 0;
@@ -29,4 +31,39 @@ body {
     font-weight: bold;
     color: ${(props) => props.theme.colors.white};
   }
+
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
 `;
